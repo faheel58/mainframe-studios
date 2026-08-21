@@ -8,7 +8,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans -->
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -48,10 +48,19 @@
     }
   </style>
 </head>
-<body class="bg-[#0a0a0d] text-[#e8e6e3] font-sans antialiased selection:bg-gold-500 selection:text-black">
+<body class="bg-[#0a0a0d] text-[#e8e6e3] font-sans antialiased selection:bg-gold-500 selection:text-black relative">
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/923208519058?text=Hello%20Mainframe%20Studios,%20I%20would%20like%20to%20inquire%20about%20your%20wedding%20photography%20and%20cinematography%20services." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform hover:scale-110 duration-300"
+     title="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
 
   <!-- 1. NAVIGATION -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 bg-transparent">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 bg-transparent">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
       
       <!-- Studio Logo -->
@@ -75,8 +84,12 @@
       </div>
 
       <!-- CTA -->
-      <div class="hidden md:flex items-center">
-        <a href="#inquiry" class="px-6 py-2.5 border border-gold-500/60 bg-gold-500/10 text-gold-400 hover:bg-gold-500 hover:text-black text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300">
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="https://wa.me/923208519058" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 flex items-center space-x-1.5">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="#inquiry" class="px-5 py-2.5 border border-gold-500/60 bg-gold-500/10 text-gold-400 hover:bg-gold-500 hover:text-black text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300">
           Get Your Quote
         </a>
       </div>
@@ -95,7 +108,10 @@
       <a href="#packages" class="block hover:text-white mobile-link">Packages</a>
       <a href="#interviews" class="block hover:text-white mobile-link">Interviews</a>
       <a href="#testimonials" class="block hover:text-white mobile-link">Reviews</a>
-      <a href="#inquiry" class="block text-center py-3 bg-gold-500 text-black font-semibold tracking-[0.2em] mobile-link">Get Your Quote</a>
+      <a href="https://wa.me/923208519058" target="_blank" rel="noopener noreferrer" class="block text-center py-2.5 bg-[#25D366] text-white font-semibold tracking-[0.2em] mobile-link">
+        <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Us
+      </a>
+      <a href="#inquiry" class="block text-center py-2.5 bg-gold-500 text-black font-semibold tracking-[0.2em] mobile-link">Get Your Quote</a>
     </div>
   </nav>
 
@@ -127,15 +143,16 @@
         <a href="#inquiry" class="w-full sm:w-auto px-8 py-4 bg-gold-500 text-black font-semibold text-xs uppercase tracking-[0.22em] hover:bg-white transition-all duration-300 shadow-xl">
           Get Your Quote
         </a>
-        <a href="#services" class="w-full sm:w-auto px-8 py-4 border border-white/30 text-white hover:border-gold-500 hover:text-gold-500 font-medium text-xs uppercase tracking-[0.22em] transition-all duration-300 bg-black/30 backdrop-blur-sm">
-          Explore Services
+        <a href="https://wa.me/923208519058?text=Hello%20Mainframe%20Studios,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 border border-[#25D366]/60 text-[#25D366] hover:bg-[#25D366] hover:text-white font-medium text-xs uppercase tracking-[0.22em] transition-all duration-300 bg-black/30 backdrop-blur-sm flex items-center justify-center space-x-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Direct WhatsApp</span>
         </a>
       </div>
 
-      <!-- Quick Metrics -->
+      <!-- Metrics -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mt-16 pt-12 border-t border-white/10 w-full max-w-4xl text-center">
         <div>
-          <div class="font-serif text-2xl md:text-3xl text-white font-medium">1000+</div>
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium">180+</div>
           <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Events Covered</div>
         </div>
         <div>
@@ -154,7 +171,7 @@
     </div>
   </section>
 
-  <!-- 3. ABOUT / MANIFESTO -->
+  <!-- 3. ABOUT -->
   <section id="about" class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5 bg-[#0e0e13]">
     <div class="max-w-5xl mx-auto text-center">
       <div class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500 mb-3">
@@ -466,7 +483,7 @@
     </div>
   </section>
 
-  <!-- 7. INTERVIEWS SECTION -->
+  <!-- 7. INTERVIEWS -->
   <section id="interviews" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
     <div class="max-w-5xl mx-auto text-center">
       <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Documentary Work</span>
@@ -535,7 +552,7 @@
     </div>
   </section>
 
-  <!-- 9. INQUIRY / GET QUOTE FORM -->
+  <!-- 9. DUAL INQUIRY FORM (EMAIL + WHATSAPP) -->
   <section id="inquiry" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
     <div class="max-w-4xl mx-auto">
       
@@ -545,33 +562,31 @@
           Let’s Tell Your Story.
         </h2>
         <p class="text-sm text-[#9b9790] max-w-xl mx-auto font-light">
-          Have an upcoming wedding, interview, or event? Share your event details below to receive our availability and tailored proposal.
+          Share your event details below. You can send it directly via email or get an instant quote on WhatsApp.
         </p>
       </div>
 
-      <div id="formSuccess" class="hidden bg-[#15151c] border border-gold-500 p-12 text-center">
-        <i class="fa-regular fa-circle-check text-4xl text-gold-500 mb-4"></i>
-        <h3 class="font-serif text-2xl text-white font-medium mb-2">Inquiry Received</h3>
-        <p class="text-sm text-[#a39f99] max-w-md mx-auto">
-          Thank you for reaching out. Our studio director will review your event details and respond within 24 hours.
-        </p>
-      </div>
-
-      <form id="inquiryForm" onsubmit="handleSubmit(event)" class="bg-[#121217] border border-white/10 p-8 md:p-12 space-y-6">
+      <!-- Change 'info@mainframestudios.com' to your actual Gmail address for FormSubmit notifications -->
+      <form id="inquiryForm" action="https://formsubmit.co/info@mainframestudios.com" method="POST" class="bg-[#121217] border border-white/10 p-8 md:p-12 space-y-6">
         
+        <!-- FormSubmit Hidden Settings -->
+        <input type="hidden" name="_subject" value="New Inquiry - Mainframe Studios Website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
               Full Name *
             </label>
-            <input type="text" required placeholder="e.g. Ali Khan" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+            <input type="text" id="clientName" name="Name" required placeholder="e.g. Ali Khan" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
           </div>
 
           <div>
             <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
               Email Address *
             </label>
-            <input type="email" required placeholder="ali@example.com" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+            <input type="email" id="clientEmail" name="Email" required placeholder="ali@example.com" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
           </div>
         </div>
 
@@ -580,19 +595,19 @@
             <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
               Phone / WhatsApp *
             </label>
-            <input type="tel" required placeholder="+92 300 1234567" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+            <input type="tel" id="clientPhone" name="Phone" required placeholder="+92 300 1234567" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
           </div>
 
           <div>
             <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
               Event Type
             </label>
-            <select class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
-              <option>Wedding (Multi-Day Complete)</option>
-              <option>Nikah / Mayun (Single Event)</option>
-              <option>Barat & Walima</option>
-              <option>Interview / Documentary Feature</option>
-              <option>Corporate Event / Gala</option>
+            <select id="clientEventType" name="EventType" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+              <option value="Wedding (Multi-Day Complete)">Wedding (Multi-Day Complete)</option>
+              <option value="Nikah / Mayun (Single Event)">Nikah / Mayun (Single Event)</option>
+              <option value="Barat & Walima">Barat & Walima</option>
+              <option value="Interview / Documentary">Interview / Documentary Feature</option>
+              <option value="Corporate Event / Gala">Corporate Event / Gala</option>
             </select>
           </div>
         </div>
@@ -602,14 +617,14 @@
             <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
               Event Date (Estimated)
             </label>
-            <input type="date" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+            <input type="date" id="clientDate" name="EventDate" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
           </div>
 
           <div>
             <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
               City / Venue
             </label>
-            <input type="text" placeholder="e.g. Lahore, Islamabad, Karachi" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+            <input type="text" id="clientCity" name="City" placeholder="e.g. Lahore, Islamabad, Karachi" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
           </div>
         </div>
 
@@ -617,7 +632,7 @@
           <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
             Interested Package
           </label>
-          <select id="packageSelect" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+          <select id="packageSelect" name="SelectedPackage" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
             <option value="Essential Collection">The Essential (Single Event Coverage)</option>
             <option value="Classic Cinema" selected>The Classic Cinema (Multi-Function Coverage)</option>
             <option value="Imperial Heritage">The Imperial Heritage (Full Wedding Experience)</option>
@@ -629,13 +644,25 @@
           <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
             Details / Specific Requirements
           </label>
-          <textarea rows="4" placeholder="Share any specific details about the venue, flow of events, or expectations..." class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors"></textarea>
+          <textarea id="clientMessage" name="Message" rows="4" placeholder="Share any specific details about the venue, flow of events, or expectations..." class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors"></textarea>
         </div>
 
-        <button type="submit" class="w-full py-4 bg-gold-500 hover:bg-white text-black font-semibold text-xs uppercase tracking-[0.25em] transition-all duration-300 flex items-center justify-center space-x-2">
-          <span>Submit Inquiry</span>
-          <i class="fa-solid fa-paper-plane text-xs"></i>
-        </button>
+        <!-- DUAL SUBMIT BUTTONS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          
+          <!-- Submit via Email -->
+          <button type="submit" class="w-full py-4 bg-gold-500 hover:bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center space-x-2">
+            <span>Send Email Inquiry</span>
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+          </button>
+
+          <!-- Submit via WhatsApp -->
+          <button type="button" onclick="sendToWhatsApp()" class="w-full py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Send via WhatsApp</span>
+          </button>
+
+        </div>
       </form>
 
     </div>
@@ -678,7 +705,7 @@
             <span>info@mainframestudios.com</span>
           </div>
           <div class="flex items-center space-x-2 text-[#a39f99]">
-            <i class="fa-solid fa-phone text-gold-500 w-4"></i>
+            <i class="fa-brands fa-whatsapp text-gold-500 w-4"></i>
             <span>+92 320 8519058</span>
           </div>
           <div class="flex items-center space-x-2 text-[#a39f99]">
@@ -696,8 +723,8 @@
         <a href="https://www.instagram.com/main_frame_studios?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hover:text-gold-500 transition-colors" title="Instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="#" class="hover:text-gold-500 transition-colors" title="Vimeo">
-          <i class="fa-brands fa-vimeo-v"></i>
+        <a href="https://wa.me/923208519058" target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition-colors" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
         </a>
       </div>
     </div>
@@ -724,7 +751,6 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Close mobile menu on click
     document.querySelectorAll('.mobile-link').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
@@ -743,16 +769,28 @@
       document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Form Submission
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('inquiryForm').classList.add('hidden');
-      document.getElementById('formSuccess').classList.remove('hidden');
-      setTimeout(() => {
-        document.getElementById('inquiryForm').reset();
-        document.getElementById('inquiryForm').classList.remove('hidden');
-        document.getElementById('formSuccess').classList.add('hidden');
-      }, 5000);
+    // Direct WhatsApp Form Sender
+    function sendToWhatsApp() {
+      const name = document.getElementById('clientName').value.trim() || 'Client';
+      const email = document.getElementById('clientEmail').value.trim() || 'Not provided';
+      const phone = document.getElementById('clientPhone').value.trim() || 'Not provided';
+      const eventType = document.getElementById('clientEventType').value;
+      const date = document.getElementById('clientDate').value || 'TBD';
+      const city = document.getElementById('clientCity').value.trim() || 'Lahore';
+      const pkg = document.getElementById('packageSelect').value;
+      const message = document.getElementById('clientMessage').value.trim() || 'None';
+
+      const waText = `*New Inquiry - Mainframe Studios*%0A%0A` +
+        `*Name:* ${encodeURIComponent(name)}%0A` +
+        `*Phone:* ${encodeURIComponent(phone)}%0A` +
+        `*Email:* ${encodeURIComponent(email)}%0A` +
+        `*Event Type:* ${encodeURIComponent(eventType)}%0A` +
+        `*Event Date:* ${encodeURIComponent(date)}%0A` +
+        `*City / Venue:* ${encodeURIComponent(city)}%0A` +
+        `*Interested Package:* ${encodeURIComponent(pkg)}%0A` +
+        `*Requirements:* ${encodeURIComponent(message)}`;
+
+      window.open(`https://wa.me/923208519058?text=${waText}`, '_blank');
     }
   </script>
 </body>
