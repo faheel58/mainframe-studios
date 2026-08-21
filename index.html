@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mainframe Studios | Cinematic Wedding Films & Visual Storytelling</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              300: '#dfcaa8',
+              400: '#d8c2a3',
+              500: '#c5a880',
+              600: '#a3845b'
+            },
+            obsidian: '#0a0a0d',
+            charcoal: '#121217',
+            card: '#15151c'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection {
+      background-color: #c5a880;
+      color: #000000;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0a0d] text-[#e8e6e3] font-sans antialiased selection:bg-gold-500 selection:text-black">
+
+  <!-- 1. NAVIGATION -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      
+      <!-- Studio Logo -->
+      <a href="#" class="flex flex-col group">
+        <span class="font-serif text-xl md:text-2xl tracking-[0.25em] font-semibold text-white uppercase group-hover:text-gold-500 transition-colors">
+          MAINFRAME
+        </span>
+        <span class="text-[9px] uppercase tracking-[0.45em] text-[#8e8b85] -mt-1 font-mono">
+          STUDIOS • CINEMA & STILLS
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium text-[#a39f99]">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#coverage" class="hover:text-white transition-colors">Coverage Scope</a>
+        <a href="#packages" class="hover:text-white transition-colors">Packages</a>
+        <a href="#interviews" class="hover:text-white transition-colors">Interviews</a>
+        <a href="#testimonials" class="hover:text-white transition-colors">Reviews</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="hidden md:flex items-center">
+        <a href="#inquiry" class="px-6 py-2.5 border border-gold-500/60 bg-gold-500/10 text-gold-400 hover:bg-gold-500 hover:text-black text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300">
+          Get Your Quote
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="lg:hidden text-white hover:text-gold-500 p-2">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0e0e13] border-b border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.2em] font-medium text-[#c0bcb5]">
+      <a href="#about" class="block hover:text-white mobile-link">About</a>
+      <a href="#services" class="block hover:text-white mobile-link">Services</a>
+      <a href="#coverage" class="block hover:text-white mobile-link">Coverage Scope</a>
+      <a href="#packages" class="block hover:text-white mobile-link">Packages</a>
+      <a href="#interviews" class="block hover:text-white mobile-link">Interviews</a>
+      <a href="#testimonials" class="block hover:text-white mobile-link">Reviews</a>
+      <a href="#inquiry" class="block text-center py-3 bg-gold-500 text-black font-semibold tracking-[0.2em] mobile-link">Get Your Quote</a>
+    </div>
+  </nav>
+
+  <!-- 2. HERO SECTION -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0d] via-[#121217] to-[#0a0a0d]"></div>
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a880_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 mb-6 border border-white/15 bg-black/40 backdrop-blur-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse"></span>
+        <span class="text-[11px] uppercase tracking-[0.3em] text-[#d4cfc7] font-mono">
+          Bespoke Cinema & Editorial Photography • Lahore, Pakistan
+        </span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight text-white leading-[1.08] mb-6">
+        We Capture Stories <br />
+        <span class="italic font-light text-gold-300">That Last Forever.</span>
+      </h1>
+
+      <p class="max-w-2xl text-base sm:text-lg text-[#b8b3ac] font-light leading-relaxed mb-10">
+        Mainframe Studios crafts bespoke wedding cinema, editorial portraits, and high-impact documentary interviews for clients who value timeless visual artistry.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+        <a href="#inquiry" class="w-full sm:w-auto px-8 py-4 bg-gold-500 text-black font-semibold text-xs uppercase tracking-[0.22em] hover:bg-white transition-all duration-300 shadow-xl">
+          Get Your Quote
+        </a>
+        <a href="#services" class="w-full sm:w-auto px-8 py-4 border border-white/30 text-white hover:border-gold-500 hover:text-gold-500 font-medium text-xs uppercase tracking-[0.22em] transition-all duration-300 bg-black/30 backdrop-blur-sm">
+          Explore Services
+        </a>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mt-16 pt-12 border-t border-white/10 w-full max-w-4xl text-center">
+        <div>
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium">1000+</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Events Covered</div>
+        </div>
+        <div>
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium">4K & 8K</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Cinema Deliverables</div>
+        </div>
+        <div>
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium">Nationwide</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Destination Available</div>
+        </div>
+        <div>
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium">100%</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Bespoke Grading</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ABOUT / MANIFESTO -->
+  <section id="about" class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5 bg-[#0e0e13]">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500 mb-3">
+        Studio Philosophy
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mb-8 leading-tight">
+        Preserving Milestone Moments With Cinematic Grace.
+      </h2>
+      <p class="text-[#a39f99] text-base sm:text-lg leading-relaxed mb-6 font-light max-w-3xl mx-auto">
+        Mainframe Studios operates at the intersection of fine-art photography and narrative filmmaking. We reject generic templates and intrusive setups, focusing instead on real emotions, elegant framing, and natural light.
+      </p>
+      <p class="text-[#8e8b85] text-sm leading-relaxed max-w-2xl mx-auto mb-12">
+        Based in Lahore and available for destination celebrations across the country, our team provides discreet coverage for intimate Nikahs, multi-day grand celebrations, and documentary productions.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left pt-8 border-t border-white/10 max-w-4xl mx-auto">
+        <div class="p-6 bg-charcoal border border-white/10">
+          <i class="fa-solid fa-camera-retro text-gold-500 text-xl mb-3"></i>
+          <h4 class="text-sm font-medium text-white uppercase tracking-wider mb-1">Unobtrusive Capture</h4>
+          <p class="text-xs text-[#8e8b85]">Preserving real laughter, tears, and family bonds without staged choreography.</p>
+        </div>
+        <div class="p-6 bg-charcoal border border-white/10">
+          <i class="fa-solid fa-palette text-gold-500 text-xl mb-3"></i>
+          <h4 class="text-sm font-medium text-white uppercase tracking-wider mb-1">Editorial Color Grading</h4>
+          <p class="text-xs text-[#8e8b85]">Skin-tone calibrated color profiles designed for organic, timeless elegance.</p>
+        </div>
+        <div class="p-6 bg-charcoal border border-white/10">
+          <i class="fa-solid fa-microphone-lines text-gold-500 text-xl mb-3"></i>
+          <h4 class="text-sm font-medium text-white uppercase tracking-wider mb-1">Spatial Audio</h4>
+          <p class="text-xs text-[#8e8b85]">High-fidelity audio recording for emotional vows, speeches, and ambient musical energy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SERVICES -->
+  <section id="services" class="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0d]">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Core Disciplines</span>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2">
+            Comprehensive Services
+          </h2>
+        </div>
+        <p class="text-sm text-[#8e8b85] max-w-md mt-4 md:mt-0 font-light">
+          Bespoke visual production tailored to weddings, private executive features, and large-scale corporate events.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500">
+                <i class="fa-solid fa-camera text-xl"></i>
+              </div>
+              <span class="font-mono text-xs text-[#52504c]">01</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3">Editorial Wedding Photography</h3>
+            <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
+              A balanced blend of photojournalism and fine-art portraits. Covering complete event flow, couple formals, family heirlooms, and spontaneous candid emotions.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">High-Res Gallery</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Fine-Art Albums</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Portraits</span>
+          </div>
+        </div>
+
+        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500">
+                <i class="fa-solid fa-film text-xl"></i>
+              </div>
+              <span class="font-mono text-xs text-[#52504c]">02</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3">Cinematic Wedding Films</h3>
+            <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
+              Narrative short films and comprehensive cinematic cuts. Masterfully edited with original event audio, licensed score compositions, and professional drone perspectives.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">4K Film</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Drone Aerial</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Teaser Reel</span>
+          </div>
+        </div>
+
+        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500">
+                <i class="fa-solid fa-microphone text-xl"></i>
+              </div>
+              <span class="font-mono text-xs text-[#52504c]">03</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3">Interviews & Documentary Features</h3>
+            <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
+              Multi-angle sit-down interviews, founder stories, family heritage chronicles, and executive profile videos captured with broadcast acoustics and studio lighting.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Studio Lighting</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Pro Audio</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Docu-Style</span>
+          </div>
+        </div>
+
+        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500">
+                <i class="fa-solid fa-sparkles text-xl"></i>
+              </div>
+              <span class="font-mono text-xs text-[#52504c]">04</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3">Event Coverage & Commercial Shoots</h3>
+            <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
+              Complete photographic and video documentation for brand galas, corporate summits, fashion shows, and high-profile private gatherings.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Brand Galas</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Same-Day Edits</span>
+            <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-black/50 text-[#8e8b85] border border-white/5">Full Scale</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. COVERAGE SCOPE BREAKDOWN -->
+  <section id="coverage" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Event Phases</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2 mb-4">
+          What We Cover
+        </h2>
+        <p class="text-sm text-[#9b9790] font-light">
+          From intimate pre-wedding rituals to multi-day grand celebrations, every segment is documented with dedicated crews and tailored camera setups.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 bg-card border border-white/10">
+          <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 01</div>
+          <h3 class="font-serif text-xl text-white mb-3">Pre-Wedding & Festivities</h3>
+          <ul class="space-y-2 text-xs text-[#a39f99]">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Dholki & Musical Nights</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Mayun & Haldi Ceremonies</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Sangeet & Choreographed Dances</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Mehendi Celebrations</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-card border border-white/10">
+          <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 02</div>
+          <h3 class="font-serif text-xl text-white mb-3">The Main Ceremony</h3>
+          <ul class="space-y-2 text-xs text-[#a39f99]">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Formal Nikah Signing & Audio</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Barat Procession & Arrival</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Couple Stage Portraiture</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Rukhsati Emotional Farewell</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-card border border-white/10">
+          <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 03</div>
+          <h3 class="font-serif text-xl text-white mb-3">Reception & Dinners</h3>
+          <ul class="space-y-2 text-xs text-[#a39f99]">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Walima Grand Reception</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Formal Family Portraits</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Couple Studio / Outdoor Session</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Welcome Dinners & Post-Events</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-card border border-white/10">
+          <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 04</div>
+          <h3 class="font-serif text-xl text-white mb-3">Documentary & Commercial</h3>
+          <ul class="space-y-2 text-xs text-[#a39f99]">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Executive & Founder Interviews</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Corporate Summits & Galas</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Heritage Documentaries</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2 text-[10px]"></i> Fashion & Brand Lookbooks</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PACKAGES SECTION -->
+  <section id="packages" class="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0d] border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Service Tiers</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2 mb-4">
+          Wedding Collections
+        </h2>
+        <p class="text-sm text-[#9b9790] font-light">
+          Each package is tailored to event duration, number of functions, and team requirements. Select a package below to request a tailored quote.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Essential -->
+        <div class="bg-charcoal border border-white/10 p-8 md:p-10 flex flex-col justify-between">
+          <div>
+            <div class="text-xs uppercase tracking-[0.2em] text-[#8e8b85] font-mono">Single Event</div>
+            <h3 class="font-serif text-3xl text-white font-normal mt-2">The Essential</h3>
+            <p class="text-xs text-[#a39f99] mt-3 leading-relaxed">
+              Ideal for intimate Nikah ceremonies, Mayun, or single-day events.
+            </p>
+            
+            <div class="my-8 py-6 border-y border-white/10">
+              <div class="font-serif text-2xl text-gold-400 font-medium">Quote On Request</div>
+              <div class="text-[11px] text-[#8e8b85] font-mono mt-1">Tailored to hours & venue</div>
+            </div>
+
+            <div class="space-y-3 mb-8">
+              <div class="text-[10px] uppercase tracking-widest text-[#8e8b85] font-mono mb-2">Includes:</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Lead Photographer + Second Shooter</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> 1x 4K Cinematic Highlight Film</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Complete High-Res Color-Corrected Gallery</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Digital Cloud Delivery & Print Rights</div>
+            </div>
+          </div>
+
+          <button onclick="selectPackage('Essential Collection')" class="w-full py-4 border border-white/20 text-white hover:bg-white hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300">
+            Request Quote
+          </button>
+        </div>
+
+        <!-- Classic -->
+        <div class="bg-charcoal border border-white/10 p-8 md:p-10 flex flex-col justify-between">
+          <div>
+            <div class="text-xs uppercase tracking-[0.2em] text-[#8e8b85] font-mono">Multi-Function</div>
+            <h3 class="font-serif text-3xl text-white font-normal mt-2">The Classic Cinema</h3>
+            <p class="text-xs text-[#a39f99] mt-3 leading-relaxed">
+              Our signature coverage for multi-event weddings (e.g. Barat + Walima or Mehendi + Barat).
+            </p>
+            
+            <div class="my-8 py-6 border-y border-white/10">
+              <div class="font-serif text-2xl text-gold-400 font-medium">Quote On Request</div>
+              <div class="text-[11px] text-[#8e8b85] font-mono mt-1">Multi-camera & aerial drone</div>
+            </div>
+
+            <div class="space-y-3 mb-8">
+              <div class="text-[10px] uppercase tracking-widest text-[#8e8b85] font-mono mb-2">Includes:</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> 2 Senior Photographers + 2 Cinematic Cinematographers</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> 1x Director’s Cut Wedding Film (8-10 Mins)</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> 60-Second Social Teaser within 72 Hours</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Drone Cinematography & Aerial Coverage</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Custom Fine-Art Heirloom Album</div>
+            </div>
+          </div>
+
+          <button onclick="selectPackage('Classic Cinema')" class="w-full py-4 border border-white/20 text-white hover:bg-white hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300">
+            Request Quote
+          </button>
+        </div>
+
+        <!-- Imperial Heritage (Highlighted) -->
+        <div class="bg-card border-2 border-gold-500 p-8 md:p-10 flex flex-col justify-between relative shadow-[0_0_40px_rgba(197,168,128,0.15)] lg:-translate-y-2">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-black font-semibold text-[10px] uppercase tracking-[0.25em] px-4 py-1">
+            Full Wedding Experience
+          </div>
+
+          <div>
+            <div class="text-xs uppercase tracking-[0.2em] text-gold-400 font-mono">Complete Heritage</div>
+            <h3 class="font-serif text-3xl text-white font-normal mt-2">The Imperial Heritage</h3>
+            <p class="text-xs text-[#a39f99] mt-3 leading-relaxed">
+              Complete multi-day wedding celebration coverage (Mayun, Mehendi, Barat, Walima).
+            </p>
+            
+            <div class="my-8 py-6 border-y border-white/10">
+              <div class="font-serif text-2xl text-gold-400 font-medium">Bespoke Proposal</div>
+              <div class="text-[11px] text-[#8e8b85] font-mono mt-1">Full studio crew & expedited edits</div>
+            </div>
+
+            <div class="space-y-3 mb-8">
+              <div class="text-[10px] uppercase tracking-widest text-gold-400 font-mono mb-2">Includes:</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Full Studio Crew (Director, DP, Stills Masters, Sound)</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> All 3 to 4 Days Coverage (Mayun / Mehendi / Barat / Walima)</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> 15-20 Min Feature Film + Teasers + Full Speeches/Vows Master</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Multiple Leather Albums + Parent Albums</div>
+              <div class="flex items-start text-xs text-[#c4c0b8]"><i class="fa-solid fa-check text-gold-500 mr-2 mt-0.5"></i> Archival 4K Master SSD Delivery</div>
+            </div>
+          </div>
+
+          <button onclick="selectPackage('Imperial Heritage')" class="w-full py-4 bg-gold-500 text-black hover:bg-white text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300">
+            Request Bespoke Quote
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. INTERVIEWS SECTION -->
+  <section id="interviews" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
+    <div class="max-w-5xl mx-auto text-center">
+      <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Documentary Work</span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2 mb-6">
+        Interviews & Narrative Production
+      </h2>
+      <p class="text-[#a39f99] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+        Beyond weddings, Mainframe Studios produces executive founder interviews, corporate profile videos, and heritage documentaries with broadcast sound clarity and calibrated multi-camera optics.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left mb-12">
+        <div class="p-6 bg-charcoal border-l-2 border-gold-500">
+          <h4 class="text-sm font-medium text-white">Broadcast Grade Sound</h4>
+          <p class="text-xs text-[#8e8b85] mt-1">Multi-channel isolated dialogue treatment for zero room reverb and crystal clear voices.</p>
+        </div>
+        <div class="p-6 bg-charcoal border-l-2 border-gold-500">
+          <h4 class="text-sm font-medium text-white">Executive Multi-Angle Lighting</h4>
+          <p class="text-xs text-[#8e8b85] mt-1">Soft cinematic key lights and subtle rim lighting to contour subjects with professional fidelity.</p>
+        </div>
+      </div>
+
+      <a href="#inquiry" class="inline-flex items-center text-xs uppercase tracking-[0.2em] font-semibold text-gold-500 hover:text-white transition-colors">
+        Commission an Interview Project <i class="fa-solid fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 8. REVIEWS -->
+  <section id="testimonials" class="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0d] border-t border-white/5">
+    <div class="max-w-5xl mx-auto text-center">
+      
+      <div class="flex justify-center space-x-1 text-gold-500 mb-6">
+        <i class="fa-solid fa-star text-sm"></i>
+        <i class="fa-solid fa-star text-sm"></i>
+        <i class="fa-solid fa-star text-sm"></i>
+        <i class="fa-solid fa-star text-sm"></i>
+        <i class="fa-solid fa-star text-sm"></i>
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal mb-12">
+        Client Testimonials
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div class="p-8 md:p-10 bg-charcoal border border-white/10 flex flex-col justify-between">
+          <p class="font-serif text-base text-[#d4cfc7] italic leading-relaxed mb-6">
+            "Mainframe Studios captured our Barat and Walima with such refinement. The highlight film felt like an actual movie rather than standard wedding footage. Highly recommended."
+          </p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="font-medium text-white text-sm">Hamza & Ayesha</div>
+            <div class="text-xs text-[#8e8b85] font-mono mt-0.5">Lahore • Barat & Walima</div>
+          </div>
+        </div>
+
+        <div class="p-8 md:p-10 bg-charcoal border border-white/10 flex flex-col justify-between">
+          <p class="font-serif text-base text-[#d4cfc7] italic leading-relaxed mb-6">
+            "Their team was extremely professional and never came in the way of guests. The candid portrait shots and audio clarity of the speeches were outstanding."
+          </p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="font-medium text-white text-sm">Usman & Mahnoor</div>
+            <div class="text-xs text-[#8e8b85] font-mono mt-0.5">Islamabad • 3-Day Wedding</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. INQUIRY / GET QUOTE FORM -->
+  <section id="inquiry" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-16">
+        <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Inquiry & Dates</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mt-2 mb-4">
+          Let’s Tell Your Story.
+        </h2>
+        <p class="text-sm text-[#9b9790] max-w-xl mx-auto font-light">
+          Have an upcoming wedding, interview, or event? Share your event details below to receive our availability and tailored proposal.
+        </p>
+      </div>
+
+      <div id="formSuccess" class="hidden bg-[#15151c] border border-gold-500 p-12 text-center">
+        <i class="fa-regular fa-circle-check text-4xl text-gold-500 mb-4"></i>
+        <h3 class="font-serif text-2xl text-white font-medium mb-2">Inquiry Received</h3>
+        <p class="text-sm text-[#a39f99] max-w-md mx-auto">
+          Thank you for reaching out. Our studio director will review your event details and respond within 24 hours.
+        </p>
+      </div>
+
+      <form id="inquiryForm" onsubmit="handleSubmit(event)" class="bg-[#121217] border border-white/10 p-8 md:p-12 space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+              Full Name *
+            </label>
+            <input type="text" required placeholder="e.g. Ali Khan" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+              Email Address *
+            </label>
+            <input type="email" required placeholder="ali@example.com" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+              Phone / WhatsApp *
+            </label>
+            <input type="tel" required placeholder="+92 300 1234567" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+              Event Type
+            </label>
+            <select class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+              <option>Wedding (Multi-Day Complete)</option>
+              <option>Nikah / Mayun (Single Event)</option>
+              <option>Barat & Walima</option>
+              <option>Interview / Documentary Feature</option>
+              <option>Corporate Event / Gala</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+              Event Date (Estimated)
+            </label>
+            <input type="date" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+              City / Venue
+            </label>
+            <input type="text" placeholder="e.g. Lahore, Islamabad, Karachi" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+            Interested Package
+          </label>
+          <select id="packageSelect" class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors">
+            <option value="Essential Collection">The Essential (Single Event Coverage)</option>
+            <option value="Classic Cinema" selected>The Classic Cinema (Multi-Function Coverage)</option>
+            <option value="Imperial Heritage">The Imperial Heritage (Full Wedding Experience)</option>
+            <option value="Custom Project">Custom Scope / Interview Shoot</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-widest text-[#a39f99] font-mono mb-2">
+            Details / Specific Requirements
+          </label>
+          <textarea rows="4" placeholder="Share any specific details about the venue, flow of events, or expectations..." class="w-full bg-[#0a0a0d] border border-white/15 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-gold-500 transition-colors"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-gold-500 hover:bg-white text-black font-semibold text-xs uppercase tracking-[0.25em] transition-all duration-300 flex items-center justify-center space-x-2">
+          <span>Submit Inquiry</span>
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- 10. FOOTER -->
+  <footer class="bg-[#07070a] border-t border-white/10 pt-16 pb-12 px-6 md:px-12 text-[#8e8b85]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+      
+      <div>
+        <a href="#" class="inline-block mb-4">
+          <span class="font-serif text-xl tracking-[0.25em] font-semibold text-white uppercase">
+            MAINFRAME
+          </span>
+          <span class="block text-[9px] uppercase tracking-[0.45em] text-[#8e8b85] -mt-1 font-mono">
+            STUDIOS
+          </span>
+        </a>
+        <p class="text-xs text-[#a39f99] leading-relaxed max-w-sm">
+          A premier cinema & photography studio dedicated to archival wedding films, high-resolution stills, and documentary executive storytelling based in Lahore, Pakistan.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white font-mono mb-4">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#about" class="hover:text-gold-500 transition-colors">About Studio</a></li>
+          <li><a href="#services" class="hover:text-gold-500 transition-colors">Services</a></li>
+          <li><a href="#coverage" class="hover:text-gold-500 transition-colors">Coverage Scope</a></li>
+          <li><a href="#packages" class="hover:text-gold-500 transition-colors">Packages & Rates</a></li>
+          <li><a href="#interviews" class="hover:text-gold-500 transition-colors">Documentary</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white font-mono mb-4">Contact & Inquiries</h4>
+        <div class="space-y-3 text-xs">
+          <div class="flex items-center space-x-2 text-[#a39f99]">
+            <i class="fa-regular fa-envelope text-gold-500 w-4"></i>
+            <span>info@mainframestudios.com</span>
+          </div>
+          <div class="flex items-center space-x-2 text-[#a39f99]">
+            <i class="fa-solid fa-phone text-gold-500 w-4"></i>
+            <span>+92 320 8519058</span>
+          </div>
+          <div class="flex items-center space-x-2 text-[#a39f99]">
+            <i class="fa-solid fa-location-dot text-gold-500 w-4"></i>
+            <span>Lahore, Pakistan</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-[#5a5752] font-mono">
+      <div>© 2026 Mainframe Studios. All Rights Reserved.</div>
+      <div class="flex space-x-4 mt-4 sm:mt-0 text-base">
+        <a href="https://www.instagram.com/main_frame_studios?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hover:text-gold-500 transition-colors" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="hover:text-gold-500 transition-colors" title="Vimeo">
+          <i class="fa-brands fa-vimeo-v"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT INTERACTIONS -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 40) {
+        nav.classList.add('bg-[#0a0a0d]/95', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-4', 'shadow-2xl');
+        nav.classList.remove('bg-transparent', 'py-6');
+      } else {
+        nav.classList.remove('bg-[#0a0a0d]/95', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-4', 'shadow-2xl');
+        nav.classList.add('bg-transparent', 'py-6');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Package Selector Link
+    function selectPackage(pkgName) {
+      const select = document.getElementById('packageSelect');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(pkgName) || select.options[i].value.includes(pkgName)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Form Submission
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('inquiryForm').classList.add('hidden');
+      document.getElementById('formSuccess').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('inquiryForm').reset();
+        document.getElementById('inquiryForm').classList.remove('hidden');
+        document.getElementById('formSuccess').classList.add('hidden');
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
