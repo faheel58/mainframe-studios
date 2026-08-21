@@ -46,57 +46,149 @@
       background-color: #c5a880;
       color: #000000;
     }
+
+    /* --- CUSTOM CINEMATIC ANIMATIONS & FIXES --- */
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered Delay Helpers */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* Button Shimmer Effect */
+    .btn-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.25) 50%,
+        transparent 70%
+      );
+      transform: rotate(25deg) translateX(-100%);
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-shimmer:hover::after {
+      transform: rotate(25deg) translateX(100%);
+    }
+
+    /* Card Hover Glow */
+    .card-glow {
+      transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card-glow:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px -10px rgba(197, 168, 128, 0.15);
+      border-color: rgba(197, 168, 128, 0.4);
+    }
+
+    /* Smooth Input Focus Pulse */
+    input:focus, select:focus, textarea:focus {
+      box-shadow: 0 0 15px rgba(197, 168, 128, 0.2);
+    }
+
+    /* DATE PICKER DARK MODE VISIBILITY FIX */
+    input[type="date"] {
+      color-scheme: dark;
+      color: #ffffff;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      filter: invert(0.8) sepia(100%) saturate(300%) hue-rotate(5deg);
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator:hover {
+      opacity: 1;
+    }
   </style>
 </head>
-<body class="bg-[#0a0a0d] text-[#e8e6e3] font-sans antialiased selection:bg-gold-500 selection:text-black relative">
+<body class="bg-[#0a0a0d] text-[#e8e6e3] font-sans antialiased selection:bg-gold-500 selection:text-black relative overflow-x-hidden">
 
   <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/923208519058?text=Hello%20Mainframe%20Studios,%20I%20would%20like%20to%20inquire%20about%20your%20wedding%20photography%20and%20cinematography%20services." 
      target="_blank" 
      rel="noopener noreferrer" 
-     class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform hover:scale-110 duration-300"
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_25px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-110 active:scale-95 group"
      title="Chat with us on WhatsApp">
-    <i class="fa-brands fa-whatsapp text-3xl"></i>
+    <i class="fa-brands fa-whatsapp text-3xl group-hover:rotate-12 transition-transform duration-300"></i>
   </a>
 
   <!-- 1. CENTERED NAVIGATION -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 bg-transparent">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 py-6 bg-transparent">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative">
       
-      <!-- Studio Logo (Centered) -->
-      <a href="#" class="flex flex-col items-center text-center group">
-        <span class="font-serif text-2xl md:text-3xl tracking-[0.3em] font-semibold text-white uppercase group-hover:text-gold-500 transition-colors">
-          MAINFRAME
-        </span>
-        <span class="text-[9px] uppercase tracking-[0.45em] text-[#8e8b85] -mt-1 font-mono">
-          STUDIOS • CINEMA & STILLS
-        </span>
-      </a>
+      <!-- Studio Logo & Instagram Icon Header -->
+      <div class="flex items-center space-x-3 group">
+        <a href="#" class="flex flex-col items-center text-center">
+          <span class="font-serif text-2xl md:text-3xl tracking-[0.3em] font-semibold text-white uppercase group-hover:text-gold-500 transition-colors duration-300">
+            MAINFRAME
+          </span>
+          <span class="text-[9px] uppercase tracking-[0.45em] text-[#8e8b85] -mt-1 font-mono">
+            STUDIOS • CINEMA & STILLS
+          </span>
+        </a>
+        
+        <!-- Instagram Link Next to Header -->
+        <a href="https://www.instagram.com/main_frame_studios?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="text-white/80 hover:text-gold-500 text-xl transition-all duration-300 hover:scale-125 mb-1" 
+           title="Follow us on Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
 
       <!-- Desktop Links (Centered Below Logo) -->
       <div class="hidden lg:flex items-center space-x-10 text-xs tracking-[0.2em] uppercase font-medium text-[#a39f99] mt-4">
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <a href="#services" class="hover:text-white transition-colors">Services</a>
-        <a href="#coverage" class="hover:text-white transition-colors">Coverage Scope</a>
-        <a href="#packages" class="hover:text-white transition-colors">Packages</a>
-        <a href="#interviews" class="hover:text-white transition-colors">Interviews</a>
-        <a href="#testimonials" class="hover:text-white transition-colors">Reviews</a>
+        <a href="#about" class="hover:text-white transition-colors duration-300 hover:scale-105 inline-block">About</a>
+        <a href="#services" class="hover:text-white transition-colors duration-300 hover:scale-105 inline-block">Services</a>
+        <a href="#coverage" class="hover:text-white transition-colors duration-300 hover:scale-105 inline-block">Coverage Scope</a>
+        <a href="#packages" class="hover:text-white transition-colors duration-300 hover:scale-105 inline-block">Packages</a>
+        <a href="#interviews" class="hover:text-white transition-colors duration-300 hover:scale-105 inline-block">Interviews</a>
+        <a href="#testimonials" class="hover:text-white transition-colors duration-300 hover:scale-105 inline-block">Reviews</a>
       </div>
 
-      <!-- Mobile Menu Button (Positioned Top Right on Mobile) -->
-      <button id="mobileMenuBtn" class="lg:hidden absolute top-1 right-6 text-white hover:text-gold-500 p-2 rounded-lg">
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="lg:hidden absolute top-1 right-6 text-white hover:text-gold-500 p-2 rounded-lg active:scale-90 transition-transform">
         <i class="fa-solid fa-bars text-xl"></i>
       </button>
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-[#0e0e13] border-b border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.2em] font-medium text-[#c0bcb5] text-center mt-4">
-      <a href="#about" class="block hover:text-white mobile-link">About</a>
-      <a href="#services" class="block hover:text-white mobile-link">Services</a>
-      <a href="#coverage" class="block hover:text-white mobile-link">Coverage Scope</a>
-      <a href="#packages" class="block hover:text-white mobile-link">Packages</a>
-      <a href="#interviews" class="block hover:text-white mobile-link">Interviews</a>
-      <a href="#testimonials" class="block hover:text-white mobile-link">Reviews</a>
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0e0e13]/95 backdrop-blur-lg border-b border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.2em] font-medium text-[#c0bcb5] text-center mt-4 transition-all duration-300">
+      <a href="#about" class="block hover:text-white mobile-link py-1">About</a>
+      <a href="#services" class="block hover:text-white mobile-link py-1">Services</a>
+      <a href="#coverage" class="block hover:text-white mobile-link py-1">Coverage Scope</a>
+      <a href="#packages" class="block hover:text-white mobile-link py-1">Packages</a>
+      <a href="#interviews" class="block hover:text-white mobile-link py-1">Interviews</a>
+      <a href="#testimonials" class="block hover:text-white mobile-link py-1">Reviews</a>
     </div>
   </nav>
 
@@ -108,48 +200,48 @@
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-      <div class="inline-flex items-center space-x-2 px-4 py-1.5 mb-6 border border-white/15 bg-black/40 backdrop-blur-sm rounded-full">
+      <div class="reveal inline-flex items-center space-x-2 px-4 py-1.5 mb-6 border border-white/15 bg-black/40 backdrop-blur-sm rounded-full">
         <span class="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse"></span>
         <span class="text-[11px] uppercase tracking-[0.3em] text-[#d4cfc7] font-mono">
           Bespoke Cinema & Editorial Photography • Lahore, Pakistan
         </span>
       </div>
 
-      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight text-white leading-[1.08] mb-6">
+      <h1 class="reveal delay-1 font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight text-white leading-[1.08] mb-6">
         We Capture Stories <br />
         <span class="italic font-light text-gold-300">That Last Forever.</span>
       </h1>
 
-      <p class="max-w-2xl text-base sm:text-lg text-[#b8b3ac] font-light leading-relaxed mb-10">
+      <p class="reveal delay-2 max-w-2xl text-base sm:text-lg text-[#b8b3ac] font-light leading-relaxed mb-10">
         Mainframe Studios crafts bespoke wedding cinema, editorial portraits, and high-impact documentary interviews for clients who value timeless visual artistry.
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
-        <a href="#inquiry" class="w-full sm:w-auto px-8 py-4 bg-gold-500 text-black font-semibold text-xs uppercase tracking-[0.22em] hover:bg-white transition-all duration-300 shadow-xl rounded-full">
+      <div class="reveal delay-3 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+        <a href="#inquiry" class="btn-shimmer w-full sm:w-auto px-8 py-4 bg-gold-500 text-black font-semibold text-xs uppercase tracking-[0.22em] hover:bg-white transition-all duration-300 shadow-xl rounded-full hover:-translate-y-1 active:scale-95 text-center">
           Get Your Quote
         </a>
-        <a href="https://wa.me/923208519058?text=Hello%20Mainframe%20Studios,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 border border-[#25D366]/60 text-[#25D366] hover:bg-[#25D366] hover:text-white font-medium text-xs uppercase tracking-[0.22em] transition-all duration-300 bg-black/30 backdrop-blur-sm flex items-center justify-center space-x-2 rounded-full">
+        <a href="https://wa.me/923208519058?text=Hello%20Mainframe%20Studios,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 border border-[#25D366]/60 text-[#25D366] hover:bg-[#25D366] hover:text-white font-medium text-xs uppercase tracking-[0.22em] transition-all duration-300 bg-black/30 backdrop-blur-sm flex items-center justify-center space-x-2 rounded-full hover:-translate-y-1 active:scale-95 shadow-lg">
           <i class="fa-brands fa-whatsapp text-sm"></i>
           <span>Direct WhatsApp</span>
         </a>
       </div>
 
       <!-- Metrics -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mt-16 pt-12 border-t border-white/10 w-full max-w-4xl text-center">
-        <div>
-          <div class="font-serif text-2xl md:text-3xl text-white font-medium">180+</div>
+      <div class="reveal delay-4 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mt-16 pt-12 border-t border-white/10 w-full max-w-4xl text-center">
+        <div class="group">
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium group-hover:text-gold-300 transition-colors">180+</div>
           <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Events Covered</div>
         </div>
-        <div>
-          <div class="font-serif text-2xl md:text-3xl text-white font-medium">4K & 8K</div>
+        <div class="group">
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium group-hover:text-gold-300 transition-colors">4K & 8K</div>
           <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Cinema Deliverables</div>
         </div>
-        <div>
-          <div class="font-serif text-2xl md:text-3xl text-white font-medium">Nationwide</div>
+        <div class="group">
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium group-hover:text-gold-300 transition-colors">Nationwide</div>
           <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Destination Available</div>
         </div>
-        <div>
-          <div class="font-serif text-2xl md:text-3xl text-white font-medium">100%</div>
+        <div class="group">
+          <div class="font-serif text-2xl md:text-3xl text-white font-medium group-hover:text-gold-300 transition-colors">100%</div>
           <div class="text-[10px] uppercase tracking-[0.2em] text-[#8e8b85] mt-1">Bespoke Grading</div>
         </div>
       </div>
@@ -159,32 +251,32 @@
   <!-- 3. ABOUT -->
   <section id="about" class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5 bg-[#0e0e13]">
     <div class="max-w-5xl mx-auto text-center">
-      <div class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500 mb-3">
+      <div class="reveal text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500 mb-3">
         Studio Philosophy
       </div>
-      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mb-8 leading-tight">
+      <h2 class="reveal delay-1 font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mb-8 leading-tight">
         Preserving Milestone Moments With Cinematic Grace.
       </h2>
-      <p class="text-[#a39f99] text-base sm:text-lg leading-relaxed mb-6 font-light max-w-3xl mx-auto">
+      <p class="reveal delay-2 text-[#a39f99] text-base sm:text-lg leading-relaxed mb-6 font-light max-w-3xl mx-auto">
         Mainframe Studios operates at the intersection of fine-art photography and narrative filmmaking. We reject generic templates and intrusive setups, focusing instead on real emotions, elegant framing, and natural light.
       </p>
-      <p class="text-[#8e8b85] text-sm leading-relaxed max-w-2xl mx-auto mb-12">
+      <p class="reveal delay-3 text-[#8e8b85] text-sm leading-relaxed max-w-2xl mx-auto mb-12">
         Based in Lahore and available for destination celebrations across the country, our team provides discreet coverage for intimate Nikahs, multi-day grand celebrations, and documentary productions.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left pt-8 border-t border-white/10 max-w-4xl mx-auto">
-        <div class="p-6 bg-charcoal border border-white/10 rounded-2xl">
-          <i class="fa-solid fa-camera-retro text-gold-500 text-xl mb-3"></i>
+        <div class="reveal delay-1 p-6 bg-charcoal border border-white/10 rounded-2xl card-glow">
+          <i class="fa-solid fa-camera-retro text-gold-500 text-xl mb-3 inline-block transition-transform duration-300 hover:scale-110"></i>
           <h4 class="text-sm font-medium text-white uppercase tracking-wider mb-1">Unobtrusive Capture</h4>
           <p class="text-xs text-[#8e8b85]">Preserving real laughter, tears, and family bonds without staged choreography.</p>
         </div>
-        <div class="p-6 bg-charcoal border border-white/10 rounded-2xl">
-          <i class="fa-solid fa-palette text-gold-500 text-xl mb-3"></i>
+        <div class="reveal delay-2 p-6 bg-charcoal border border-white/10 rounded-2xl card-glow">
+          <i class="fa-solid fa-palette text-gold-500 text-xl mb-3 inline-block transition-transform duration-300 hover:scale-110"></i>
           <h4 class="text-sm font-medium text-white uppercase tracking-wider mb-1">Editorial Color Grading</h4>
           <p class="text-xs text-[#8e8b85]">Skin-tone calibrated color profiles designed for organic, timeless elegance.</p>
         </div>
-        <div class="p-6 bg-charcoal border border-white/10 rounded-2xl">
-          <i class="fa-solid fa-microphone-lines text-gold-500 text-xl mb-3"></i>
+        <div class="reveal delay-3 p-6 bg-charcoal border border-white/10 rounded-2xl card-glow">
+          <i class="fa-solid fa-microphone-lines text-gold-500 text-xl mb-3 inline-block transition-transform duration-300 hover:scale-110"></i>
           <h4 class="text-sm font-medium text-white uppercase tracking-wider mb-1">Spatial Audio</h4>
           <p class="text-xs text-[#8e8b85]">High-fidelity audio recording for emotional vows, speeches, and ambient musical energy.</p>
         </div>
@@ -196,7 +288,7 @@
   <section id="services" class="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0d]">
     <div class="max-w-7xl mx-auto">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-16">
         <div>
           <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Core Disciplines</span>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2">
@@ -210,15 +302,15 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-1 bg-[#121217] border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl card-glow group">
           <div>
             <div class="flex items-center justify-between mb-8">
-              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl group-hover:scale-110 group-hover:border-gold-500/50 transition-all duration-300">
                 <i class="fa-solid fa-camera text-xl"></i>
               </div>
               <span class="font-mono text-xs text-[#52504c]">01</span>
             </div>
-            <h3 class="font-serif text-2xl text-white font-medium mb-3">Editorial Wedding Photography</h3>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3 group-hover:text-gold-300 transition-colors">Editorial Wedding Photography</h3>
             <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
               A balanced blend of photojournalism and fine-art portraits. Covering complete event flow, couple formals, family heirlooms, and spontaneous candid emotions.
             </p>
@@ -230,15 +322,15 @@
           </div>
         </div>
 
-        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-2 bg-[#121217] border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl card-glow group">
           <div>
             <div class="flex items-center justify-between mb-8">
-              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl group-hover:scale-110 group-hover:border-gold-500/50 transition-all duration-300">
                 <i class="fa-solid fa-film text-xl"></i>
               </div>
               <span class="font-mono text-xs text-[#52504c]">02</span>
             </div>
-            <h3 class="font-serif text-2xl text-white font-medium mb-3">Cinematic Wedding Films</h3>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3 group-hover:text-gold-300 transition-colors">Cinematic Wedding Films</h3>
             <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
               Narrative short films and comprehensive cinematic cuts. Masterfully edited with original event audio, licensed score compositions, and professional drone perspectives.
             </p>
@@ -250,15 +342,15 @@
           </div>
         </div>
 
-        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-1 bg-[#121217] border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl card-glow group">
           <div>
             <div class="flex items-center justify-between mb-8">
-              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl group-hover:scale-110 group-hover:border-gold-500/50 transition-all duration-300">
                 <i class="fa-solid fa-microphone text-xl"></i>
               </div>
               <span class="font-mono text-xs text-[#52504c]">03</span>
             </div>
-            <h3 class="font-serif text-2xl text-white font-medium mb-3">Interviews & Documentary Features</h3>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3 group-hover:text-gold-300 transition-colors">Interviews & Documentary Features</h3>
             <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
               Multi-angle sit-down interviews, founder stories, family heritage chronicles, and executive profile videos captured with broadcast acoustics and studio lighting.
             </p>
@@ -270,15 +362,15 @@
           </div>
         </div>
 
-        <div class="bg-[#121217] border border-white/10 hover:border-gold-500/50 p-8 md:p-10 transition-all duration-300 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-2 bg-[#121217] border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl card-glow group">
           <div>
             <div class="flex items-center justify-between mb-8">
-              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl">
+              <div class="w-12 h-12 flex items-center justify-center border border-white/15 bg-black text-gold-500 rounded-xl group-hover:scale-110 group-hover:border-gold-500/50 transition-all duration-300">
                 <i class="fa-solid fa-sparkles text-xl"></i>
               </div>
               <span class="font-mono text-xs text-[#52504c]">04</span>
             </div>
-            <h3 class="font-serif text-2xl text-white font-medium mb-3">Event Coverage & Commercial Shoots</h3>
+            <h3 class="font-serif text-2xl text-white font-medium mb-3 group-hover:text-gold-300 transition-colors">Event Coverage & Commercial Shoots</h3>
             <p class="text-sm text-[#9b9790] leading-relaxed mb-6">
               Complete photographic and video documentation for brand galas, corporate summits, fashion shows, and high-profile private gatherings.
             </p>
@@ -298,7 +390,7 @@
   <section id="coverage" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
         <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Event Phases</span>
         <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2 mb-4">
           What We Cover
@@ -310,7 +402,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <div class="p-6 bg-card border border-white/10 rounded-2xl">
+        <div class="reveal delay-1 p-6 bg-card border border-white/10 rounded-2xl card-glow">
           <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 01</div>
           <h3 class="font-serif text-xl text-white mb-3">Pre-Wedding & Festivities</h3>
           <ul class="space-y-2 text-xs text-[#a39f99]">
@@ -321,7 +413,7 @@
           </ul>
         </div>
 
-        <div class="p-6 bg-card border border-white/10 rounded-2xl">
+        <div class="reveal delay-2 p-6 bg-card border border-white/10 rounded-2xl card-glow">
           <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 02</div>
           <h3 class="font-serif text-xl text-white mb-3">The Main Ceremony</h3>
           <ul class="space-y-2 text-xs text-[#a39f99]">
@@ -332,7 +424,7 @@
           </ul>
         </div>
 
-        <div class="p-6 bg-card border border-white/10 rounded-2xl">
+        <div class="reveal delay-3 p-6 bg-card border border-white/10 rounded-2xl card-glow">
           <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 03</div>
           <h3 class="font-serif text-xl text-white mb-3">Reception & Dinners</h3>
           <ul class="space-y-2 text-xs text-[#a39f99]">
@@ -343,7 +435,7 @@
           </ul>
         </div>
 
-        <div class="p-6 bg-card border border-white/10 rounded-2xl">
+        <div class="reveal delay-4 p-6 bg-card border border-white/10 rounded-2xl card-glow">
           <div class="text-xs font-mono text-gold-500 uppercase tracking-widest mb-2">Phase 04</div>
           <h3 class="font-serif text-xl text-white mb-3">Documentary & Commercial</h3>
           <ul class="space-y-2 text-xs text-[#a39f99]">
@@ -362,7 +454,7 @@
   <section id="packages" class="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0d] border-t border-white/5">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-20">
+      <div class="reveal text-center max-w-3xl mx-auto mb-20">
         <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Service Tiers</span>
         <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2 mb-4">
           Wedding Collections
@@ -375,7 +467,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
         
         <!-- Essential -->
-        <div class="bg-charcoal border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-1 bg-charcoal border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl card-glow">
           <div>
             <div class="text-xs uppercase tracking-[0.2em] text-[#8e8b85] font-mono">Single Event</div>
             <h3 class="font-serif text-3xl text-white font-normal mt-2">The Essential</h3>
@@ -397,13 +489,13 @@
             </div>
           </div>
 
-          <button onclick="selectPackage('Essential Collection')" class="w-full py-4 border border-white/20 text-white hover:bg-white hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full">
+          <button onclick="selectPackage('Essential Collection')" class="btn-shimmer w-full py-4 border border-white/20 text-white hover:bg-white hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full active:scale-95">
             Request Quote
           </button>
         </div>
 
         <!-- Classic -->
-        <div class="bg-charcoal border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-2 bg-charcoal border border-white/10 p-8 md:p-10 flex flex-col justify-between rounded-2xl card-glow">
           <div>
             <div class="text-xs uppercase tracking-[0.2em] text-[#8e8b85] font-mono">Multi-Function</div>
             <h3 class="font-serif text-3xl text-white font-normal mt-2">The Classic Cinema</h3>
@@ -426,14 +518,14 @@
             </div>
           </div>
 
-          <button onclick="selectPackage('Classic Cinema')" class="w-full py-4 border border-white/20 text-white hover:bg-white hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full">
+          <button onclick="selectPackage('Classic Cinema')" class="btn-shimmer w-full py-4 border border-white/20 text-white hover:bg-white hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full active:scale-95">
             Request Quote
           </button>
         </div>
 
         <!-- Imperial Heritage (Highlighted) -->
-        <div class="bg-card border-2 border-gold-500 p-8 md:p-10 flex flex-col justify-between relative shadow-[0_0_40px_rgba(197,168,128,0.15)] lg:-translate-y-2 rounded-2xl">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-black font-semibold text-[10px] uppercase tracking-[0.25em] px-4 py-1 rounded-full">
+        <div class="reveal delay-3 bg-card border-2 border-gold-500 p-8 md:p-10 flex flex-col justify-between relative shadow-[0_0_40px_rgba(197,168,128,0.15)] lg:-translate-y-2 rounded-2xl card-glow">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-black font-semibold text-[10px] uppercase tracking-[0.25em] px-4 py-1 rounded-full shadow-md">
             Full Wedding Experience
           </div>
 
@@ -459,7 +551,7 @@
             </div>
           </div>
 
-          <button onclick="selectPackage('Imperial Heritage')" class="w-full py-4 bg-gold-500 text-black hover:bg-white text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full">
+          <button onclick="selectPackage('Imperial Heritage')" class="btn-shimmer w-full py-4 bg-gold-500 text-black hover:bg-white text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full active:scale-95 shadow-lg">
             Request Bespoke Quote
           </button>
         </div>
@@ -471,28 +563,28 @@
   <!-- 7. INTERVIEWS -->
   <section id="interviews" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
     <div class="max-w-5xl mx-auto text-center">
-      <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Documentary Work</span>
-      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2 mb-6">
+      <span class="reveal text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Documentary Work</span>
+      <h2 class="reveal delay-1 font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal mt-2 mb-6">
         Interviews & Narrative Production
       </h2>
-      <p class="text-[#a39f99] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+      <p class="reveal delay-2 text-[#a39f99] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
         Beyond weddings, Mainframe Studios produces executive founder interviews, corporate profile videos, and heritage documentaries with broadcast sound clarity and calibrated multi-camera optics.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left mb-12">
-        <div class="p-6 bg-charcoal border-l-2 border-gold-500 rounded-r-2xl">
+        <div class="reveal delay-1 p-6 bg-charcoal border-l-2 border-gold-500 rounded-r-2xl card-glow">
           <h4 class="text-sm font-medium text-white">Broadcast Grade Sound</h4>
           <p class="text-xs text-[#8e8b85] mt-1">Multi-channel isolated dialogue treatment for zero room reverb and crystal clear voices.</p>
         </div>
-        <div class="p-6 bg-charcoal border-l-2 border-gold-500 rounded-r-2xl">
+        <div class="reveal delay-2 p-6 bg-charcoal border-l-2 border-gold-500 rounded-r-2xl card-glow">
           <h4 class="text-sm font-medium text-white">Executive Multi-Angle Lighting</h4>
           <p class="text-xs text-[#8e8b85] mt-1">Soft cinematic key lights and subtle rim lighting to contour subjects with professional fidelity.</p>
         </div>
       </div>
 
-      <a href="#inquiry" class="inline-flex items-center px-8 py-3.5 bg-gold-500/10 border border-gold-500/50 text-gold-400 hover:bg-gold-500 hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full">
+      <a href="#inquiry" class="btn-shimmer reveal delay-3 inline-flex items-center px-8 py-3.5 bg-gold-500/10 border border-gold-500/50 text-gold-400 hover:bg-gold-500 hover:text-black text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 rounded-full hover:-translate-y-1 active:scale-95">
         <span>Commission an Interview Project</span>
-        <i class="fa-solid fa-arrow-right ml-2"></i>
+        <i class="fa-solid fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
       </a>
     </div>
   </section>
@@ -501,7 +593,7 @@
   <section id="testimonials" class="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0d] border-t border-white/5">
     <div class="max-w-5xl mx-auto text-center">
       
-      <div class="flex justify-center space-x-1 text-gold-500 mb-6">
+      <div class="reveal flex justify-center space-x-1 text-gold-500 mb-6">
         <i class="fa-solid fa-star text-sm"></i>
         <i class="fa-solid fa-star text-sm"></i>
         <i class="fa-solid fa-star text-sm"></i>
@@ -509,12 +601,12 @@
         <i class="fa-solid fa-star text-sm"></i>
       </div>
 
-      <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal mb-12">
+      <h2 class="reveal delay-1 font-serif text-3xl sm:text-4xl text-white font-normal mb-12">
         Client Testimonials
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-        <div class="p-8 md:p-10 bg-charcoal border border-white/10 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-1 p-8 md:p-10 bg-charcoal border border-white/10 flex flex-col justify-between rounded-2xl card-glow">
           <p class="font-serif text-base text-[#d4cfc7] italic leading-relaxed mb-6">
             "Mainframe Studios captured our Barat and Walima with such refinement. The highlight film felt like an actual movie rather than standard wedding footage. Highly recommended."
           </p>
@@ -524,7 +616,7 @@
           </div>
         </div>
 
-        <div class="p-8 md:p-10 bg-charcoal border border-white/10 flex flex-col justify-between rounded-2xl">
+        <div class="reveal delay-2 p-8 md:p-10 bg-charcoal border border-white/10 flex flex-col justify-between rounded-2xl card-glow">
           <p class="font-serif text-base text-[#d4cfc7] italic leading-relaxed mb-6">
             "Their team was extremely professional and never came in the way of guests. The candid portrait shots and audio clarity of the speeches were outstanding."
           </p>
@@ -538,11 +630,11 @@
     </div>
   </section>
 
-  <!-- 9. DUAL INQUIRY FORM (EMAIL + WHATSAPP) -->
+  <!-- 9. DUAL INQUIRY FORM -->
   <section id="inquiry" class="py-24 md:py-32 px-6 md:px-12 bg-[#0e0e13] border-t border-white/5">
     <div class="max-w-4xl mx-auto">
       
-      <div class="text-center mb-16">
+      <div class="reveal text-center mb-16">
         <span class="text-[11px] font-mono uppercase tracking-[0.3em] text-gold-500">Inquiry & Dates</span>
         <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mt-2 mb-4">
           Let’s Tell Your Story.
@@ -552,10 +644,9 @@
         </p>
       </div>
 
-      <!-- Change 'info@mainframestudios.com' to your actual Gmail address for FormSubmit notifications -->
-      <form id="inquiryForm" action="https://formsubmit.co/info@mainframestudios.com" method="POST" class="bg-[#121217] border border-white/10 p-8 md:p-12 space-y-6 rounded-3xl shadow-2xl">
+      <form id="inquiryForm" action="https://formsubmit.co/info@mainframestudios.com" method="POST" class="reveal delay-1 bg-[#121217] border border-white/10 p-8 md:p-12 space-y-6 rounded-3xl shadow-2xl">
         
-        <!-- FormSubmit Hidden Settings -->
+        <!-- FormSubmit Settings -->
         <input type="hidden" name="_subject" value="New Inquiry - Mainframe Studios Website">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
@@ -637,13 +728,13 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
           
           <!-- Submit via Email -->
-          <button type="submit" class="w-full py-4 bg-gold-500 hover:bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center space-x-2 rounded-full shadow-lg">
+          <button type="submit" class="btn-shimmer w-full py-4 bg-gold-500 hover:bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center space-x-2 rounded-full shadow-lg hover:-translate-y-1 active:scale-95">
             <span>Send Email Inquiry</span>
             <i class="fa-solid fa-paper-plane text-xs"></i>
           </button>
 
           <!-- Submit via WhatsApp -->
-          <button type="button" onclick="sendToWhatsApp()" class="w-full py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center space-x-2 rounded-full shadow-lg">
+          <button type="button" onclick="sendToWhatsApp()" class="w-full py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center space-x-2 rounded-full shadow-lg hover:-translate-y-1 active:scale-95">
             <i class="fa-brands fa-whatsapp text-sm"></i>
             <span>Send via WhatsApp</span>
           </button>
@@ -659,8 +750,8 @@
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
       
       <div>
-        <a href="#" class="inline-block mb-4">
-          <span class="font-serif text-xl tracking-[0.25em] font-semibold text-white uppercase">
+        <a href="#" class="inline-block mb-4 group">
+          <span class="font-serif text-xl tracking-[0.25em] font-semibold text-white uppercase group-hover:text-gold-500 transition-colors">
             MAINFRAME
           </span>
           <span class="block text-[9px] uppercase tracking-[0.45em] text-[#8e8b85] -mt-1 font-mono">
@@ -703,22 +794,34 @@
 
     </div>
 
-    <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-[#5a5752] font-mono">
+    <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 text-center text-xs text-[#5a5752] font-mono">
       <div>© 2026 Mainframe Studios. All Rights Reserved.</div>
-      <div class="flex space-x-4 mt-4 sm:mt-0 text-base">
-        <a href="https://www.instagram.com/main_frame_studios?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hover:text-gold-500 transition-colors" title="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://wa.me/923208519058" target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition-colors" title="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-      </div>
     </div>
   </footer>
 
-  <!-- JAVASCRIPT INTERACTIONS -->
+  <!-- JAVASCRIPT INTERACTIONS & ANIMATIONS -->
   <script>
-    // Navbar scroll effect
+    // 1. Scroll Reveal Animation via IntersectionObserver
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            // Optionally unobserve after revealing once
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      revealElements.forEach(element => revealObserver.observe(element));
+    });
+
+    // 2. Navbar scroll effect
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
       if (window.scrollY > 40) {
@@ -730,7 +833,7 @@
       }
     });
 
-    // Mobile Menu Toggle
+    // 3. Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     mobileBtn.addEventListener('click', () => {
@@ -743,7 +846,7 @@
       });
     });
 
-    // Package Selector Link
+    // 4. Package Selector Link
     function selectPackage(pkgName) {
       const select = document.getElementById('packageSelect');
       for (let i = 0; i < select.options.length; i++) {
@@ -755,7 +858,7 @@
       document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Direct WhatsApp Form Sender
+    // 5. Direct WhatsApp Form Sender
     function sendToWhatsApp() {
       const name = document.getElementById('clientName').value.trim() || 'Client';
       const email = document.getElementById('clientEmail').value.trim() || 'Not provided';
