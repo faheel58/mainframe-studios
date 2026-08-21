@@ -59,13 +59,13 @@
     <i class="fa-brands fa-whatsapp text-3xl"></i>
   </a>
 
-  <!-- 1. NAVIGATION -->
+  <!-- 1. CENTERED NAVIGATION -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 bg-transparent">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative">
       
-      <!-- Studio Logo -->
-      <a href="#" class="flex flex-col group">
-        <span class="font-serif text-xl md:text-2xl tracking-[0.25em] font-semibold text-white uppercase group-hover:text-gold-500 transition-colors">
+      <!-- Studio Logo (Centered) -->
+      <a href="#" class="flex flex-col items-center text-center group">
+        <span class="font-serif text-2xl md:text-3xl tracking-[0.3em] font-semibold text-white uppercase group-hover:text-gold-500 transition-colors">
           MAINFRAME
         </span>
         <span class="text-[9px] uppercase tracking-[0.45em] text-[#8e8b85] -mt-1 font-mono">
@@ -73,8 +73,8 @@
         </span>
       </a>
 
-      <!-- Desktop Links -->
-      <div class="hidden lg:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium text-[#a39f99]">
+      <!-- Desktop Links (Centered Below Logo) -->
+      <div class="hidden lg:flex items-center space-x-10 text-xs tracking-[0.2em] uppercase font-medium text-[#a39f99] mt-4">
         <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#services" class="hover:text-white transition-colors">Services</a>
         <a href="#coverage" class="hover:text-white transition-colors">Coverage Scope</a>
@@ -83,40 +83,25 @@
         <a href="#testimonials" class="hover:text-white transition-colors">Reviews</a>
       </div>
 
-      <!-- CTA -->
-      <div class="hidden md:flex items-center space-x-3">
-        <a href="https://wa.me/923208519058" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 flex items-center space-x-1.5 rounded-full">
-          <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>WhatsApp</span>
-        </a>
-        <a href="#inquiry" class="px-5 py-2.5 border border-gold-500/60 bg-gold-500/10 text-gold-400 hover:bg-gold-500 hover:text-black text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 rounded-full">
-          Get Your Quote
-        </a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="lg:hidden text-white hover:text-gold-500 p-2 rounded-lg">
+      <!-- Mobile Menu Button (Positioned Top Right on Mobile) -->
+      <button id="mobileMenuBtn" class="lg:hidden absolute top-1 right-6 text-white hover:text-gold-500 p-2 rounded-lg">
         <i class="fa-solid fa-bars text-xl"></i>
       </button>
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-[#0e0e13] border-b border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.2em] font-medium text-[#c0bcb5]">
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0e0e13] border-b border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.2em] font-medium text-[#c0bcb5] text-center mt-4">
       <a href="#about" class="block hover:text-white mobile-link">About</a>
       <a href="#services" class="block hover:text-white mobile-link">Services</a>
       <a href="#coverage" class="block hover:text-white mobile-link">Coverage Scope</a>
       <a href="#packages" class="block hover:text-white mobile-link">Packages</a>
       <a href="#interviews" class="block hover:text-white mobile-link">Interviews</a>
       <a href="#testimonials" class="block hover:text-white mobile-link">Reviews</a>
-      <a href="https://wa.me/923208519058" target="_blank" rel="noopener noreferrer" class="block text-center py-2.5 bg-[#25D366] text-white font-semibold tracking-[0.2em] mobile-link rounded-full">
-        <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Us
-      </a>
-      <a href="#inquiry" class="block text-center py-2.5 bg-gold-500 text-black font-semibold tracking-[0.2em] mobile-link rounded-full">Get Your Quote</a>
     </div>
   </nav>
 
   <!-- 2. HERO SECTION -->
-  <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
+  <section class="relative min-h-screen flex items-center justify-center pt-32 pb-16 px-6 overflow-hidden">
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0d] via-[#121217] to-[#0a0a0d]"></div>
       <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a880_1px,transparent_1px)] [background-size:24px_24px]"></div>
